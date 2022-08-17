@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" title="text.css" href="styles/navigation.css">
+        <link rel="stylesheet" title="text.css" href="styles/Style mainpage.css">
+        <meta name="viewport" content="user-scalable=no",width="device-width,initial-scale=1">
+        <title>Plan to do</title>
+        <link rel = "icon" href = "pics/logo2.png" type = "image/x-icon">
+        
+        <style>
+            h1{
+                color:rgb(0, 167, 130) ;
+                font-size:40px;
+            }
+            #app{
+                position:absolute;
+                top:100px;
+                text-align: center;
+                margin: auto;
+                width: 98%;
+                padding: 10px;
+            }
+            #btns{
+                padding: 7px 25px; 
+                margin: 5px; 
+                background-color: white;
+                border:1px rgb(0, 167, 130) solid ;
+                border-radius: 10px;
+                transition: 0.3s;
+            }
+            #btns:hover{
+                cursor: pointer;
+                color: white;
+                background-color: rgb(0, 167, 130);
+            }
+            .container ol li{
+                border:1px rgb(0, 167, 130) solid;
+                text-align: left;
+                margin-bottom: 5px;
+                padding: 5px 10px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="navb"></div>
+                <ul class="nav">
+                    <li><img src="pics/logo.png" style="width: 150px; position:fixed; left:40px; top:8px;"></li>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="about.html" style="border-right: 1px rgb(0, 167, 130) solid;padding-right: 10px;">About</a></li>
+                    <li><a href="#" style="padding-left: 10px;">Plan to do</a></li>
+                    <li><a href="#" style="padding-left: 10px; position:relative; top: 5px;"><img src="pics/facebook.png" width="20px"></a></li>
+                    <li><a href="#" style="padding-left: 5px; position:relative; top: 5px;"><img src="pics/instagram.png" width="20px"></a></li>
+                    <li><a href="#" style="padding-left: 5px; position:relative; top: 5px;"><img src="pics/youtube.png" width="20px"></a></li>
+        
+                </ul>
+                
+        <div id="app">
+            <div class="container">
+                <h1>Plan your tour</h1>
+
+                <div v-if="!isEditing">
+                    <input type="text" placeholder="Enter your planning" v-model="todo" style="font-size: 20px; padding: 5px;width: 50%;">
+                    <input type="submit" value="Add" @click="storeTodo" id="btns">
+                 </div>
+                 <div v-else="isEditing">
+                    <input type="text" v-model="todo"  style="font-size: 20px; padding: 5px;width: 50%;">
+                    <input type="submit" value="update" @click="updateTodo" id="btns">
+                 </div>
+
+                <ol>
+                    <li v-for="(todo, index) in todos">
+                        {{ todo }}<br>
+                        <button @click="editTodo(index, todo)" id="btns" style="margin-left: 40%;">Edit</button>
+                        <button @click="deleteTodo(index)" id="btns" >Delete</button>
+                    </li>
+                </ol>
+                <button onclick="window.print();" id="btns" style="float: right;">Save</button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="todo.js"></script>
+            
+               
+            
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no",width="device-width,initial-scale=1">
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        </style>
+        
+        <script>
+            function saveContent(){
+                document.getElementById("display_name").innerText = document.getElementById("name").value;
+                document.getElementById("display_country").innerText = document.getElementById("country").value;
+            }
+        </script>
+    </head>
+    <body>
+        <input id="name" type="text" placeholder="Enter your name">
+        <input id="country" type="text" placeholder="Enter your Country">
+        <button id="ok" onclick="saveContent()">OK</button>
+        <div id="display_name"></div>
+        <div id="display_country"></div>
+    </body>
+</html>

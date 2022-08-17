@@ -1,0 +1,24 @@
+body{
+    padding:0;
+    margin:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#headding{
+    font-family: Century Gothic;
+    font-size: 7vmin;
+    color:rgb(255, 255, 255);
+    text-align: left;
+    position:absolute;
+    left:50%;
+    top:10vmin;
+    z-index: 2;
+}
+.mainimg{
+    margin: 0%;
+    width: 100%;
+    height: 610px;
+    object-fit: cover;
+    position: relative;
+    top:50px;
+}
+
